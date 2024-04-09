@@ -1,5 +1,5 @@
 # i = -pi:0.1:pi;
-
+#Aproximaciones con Taylor lol
 i = linspace(-pi,pi,25);
 figure(4);
 y = 1;
