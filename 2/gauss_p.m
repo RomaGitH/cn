@@ -13,7 +13,7 @@ function [x] = gauss_p(A,b)
       break
     endif
     p = p + k -1; #numeracion globadl
-    if p == k
+    if p ~= k
       r([p k]) = r([k p]); #(SWAP) actualizacion de pivot
     endif
 

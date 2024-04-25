@@ -1,4 +1,4 @@
-function [x, r, it]=Jacobi(A, b, x0, maxit, tol)
+function [x,it,r]=jacobi(A, b, x0, maxit, tol)
 
  % n = size(A,1);
  n = length(A(1,:));
