@@ -1,0 +1,13 @@
+function [x,h] = newton(f,df,x0,kmax,tol)
+  for i=1:kmax
+    x = x0 - f(x0)/df(x0);  #df(x0) != 0...
+    if abs(x - x0)<tol
+      h = 1;
+      break;
+    endif
+    x0 = x;
+  endfor
+  h = 0;
+
+
+  endfunction
