@@ -4,8 +4,8 @@ function [x,h] = biseccion(f,xmin,xmax,kmax,tol)
    for i=1:kmax
     x = xmin + (xmax-xmin)/2;
 
-    if abs(f(x)) < tol
-      h = 1;
+    if abs(x-xmax) < tol #(xmax-xmin)/2) #abs(f(x))
+      h = i;
       break;
     elseif f(xmin)*f(x) > 0
       xmin = x;

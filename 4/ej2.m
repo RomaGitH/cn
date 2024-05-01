@@ -9,5 +9,6 @@
 ##plot(x,g(x));
 
 tic()
-[x,h] = puntofijo(@g,1.5,150,1e-3)
+[x,h] = puntofijo(@g,2.5,150,1e-3)
 toc()
+f(x)
