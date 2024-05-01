@@ -3,7 +3,7 @@ function [x,h] = biseccion(f,xmin,xmax,kmax,tol)
    h = 0;
    for i=1:kmax
     x = xmin + (xmax-xmin)/2;
-##    f(x)
+
     if abs(f(x)) < tol
       h = 1;
       break;

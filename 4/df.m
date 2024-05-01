@@ -1,7 +1,7 @@
-function y = f(x)
+function y = df(x)
 
 
-   y  = sin(x) + cos(1+(x.^2)) - 1;
+   y  = cos(x)-(2*x*sin((x^2)+1));
 
 
 ##   y  = x^3 +4*(x^2) - 10; #ej2

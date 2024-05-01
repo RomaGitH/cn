@@ -1,11 +1,12 @@
 function [x,h] = secante(f,xmin,xmax,kmax,tol)
 
+   h = 0;
    q0 = f(xmin);
    q1 = f(xmax);
 
   for i=2:kmax
-    x = xmax - q1*(xmax-xmin)/(q1-q0);  #df(x0) != 0...
-    if abs(x - x0)<tol
+    x = xmax - q1*(xmax-xmin)/(q1-q0)
+    if abs(x - xmax)<tol
       h = 1;
       break;
     endif
@@ -15,7 +16,6 @@ function [x,h] = secante(f,xmin,xmax,kmax,tol)
     xmax = x;
     q1 = f(x);
   endfor
-  h = 0;
 
 
   endfunction
