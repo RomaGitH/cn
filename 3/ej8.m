@@ -15,18 +15,30 @@ b =  (((h^4)*P)/(E*J))* ones(Nh-3,1);
 
 tol = 1e-8;
 x0 = ones(Nh-3,1);
-maxit = 10000;
+maxit = 5000;
 w = 0.5;
 
-##[x, r, it]=gaussseidel(A, b, x0, maxit, tol)
-x = gauss_p(A,b)
-z = A\b
+##x = gauss_p(A,b)
+##z = A\b
 ##plot(2:Nh-2, -x);
+
+##AA = [2 -2 0;-1 2 -1;0 -1 2];
+##bb = [1 2 3]';
+##x0 = [0 0 0]';
+##x = AA\bb
+r=pivot(A,b);
+P = permutacion(r);
+AA = P*[A b];
+A= AA(:,1:end-1);
+b= AA(:,end);
+##[x, it, ~ ]=jacobi(A, b, x0, maxit, tol)
 
 [T, ~, ~] = to_jacobi(A,b);
 max(abs(eig(T)))
 [T, ~, ~] = to_gaussseidel(A,b);
 max(abs(eig(T)))
-[T, ~, ~] = to_sor(A,b,0.5);
+[T, ~, ~] = to_sor(A,b,w);
 max(abs(eig(T)))
+
+
 

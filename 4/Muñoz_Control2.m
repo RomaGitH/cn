@@ -1,6 +1,6 @@
 ##x! = 1
 
-#y = ((x./(1.-x)).*((sqrt(2*3.4)./sqrt(2.+x))))- 0.04;
+#for
 ##graficacion
 x = -2:00.1:2;
 plot(x,f(x));
