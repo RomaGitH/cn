@@ -6,7 +6,7 @@ function r = pivot(A,b)
   epsilon = 1e-9;
 
   for k = 1:n-1
-    [pmax, p] = max(abs(A(r(k:n),k)))
+    [pmax, p] = max(abs(A(r(k:n),k)));
 
     if pmax < epsilon
       disp('posibles pivotes 0')
