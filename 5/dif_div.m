@@ -1,28 +1,21 @@
-function [fun,res] = dif_div(x,fx,a)
-    A = zeros(length(x),leng(x)+1);
-    for i = 1:length(x)
-      A(i,1) = x(i);
-      A(i,2) = fx(i);
+function [fun] = dif_div(x,fx)
+
+    n = length(x);
+    A = zeros(n,n);
+    fun = [];
+    for i = 1:n
+      A(i,1) = fx(i);
     endfor
 
-    for i = 3:length(x)+1
-      for j = 1:length(x)+2
-        A(j,i) = (A(j+1,i-1)-A(j,i-1))/(A(j+i-2,1)-A(j,1));
+    for j=2:n
+      for i=j:n
+        A(i,j) = (A(i,j-1) - A(i-1, j-1))/(x(i)-x(i-j+1));
       endfor
     endfor
 
-    syms t; #variable simbolica
-    #pkg load symbolic
-    fun = A(1,2);
-    for i=1:length(x)-1
-      mul = 1;
-      for j=1:i
-        mul  = mul*(t-A(j,1));
-      endfor
-      fun = fun + mul*A(1,i+2);
+    for i = n:-1:1
+      fun =  [fun A(i,i)];
     endfor
 
-
-    res = subs(fun,a);
 
   endfunction
