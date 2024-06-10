@@ -1,3 +1,7 @@
+# dfdy : derivada parcial de f con respectoa y
+# N : numero de pasos
+# a<t<b
+#t: vector de psos del tiempo
 function [t,y] = CN_newton(f,dfdy,a,b,y0,N)
   tol=1e-9;           #tolerancia para Newton
   kmax=100;           #cantidad maxima de iteraciones para Newton
