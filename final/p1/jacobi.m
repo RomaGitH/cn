@@ -12,9 +12,9 @@ function [x,it,r]=jacobi(A, b, x0, maxit, tol)
    x(i) = ( b(i) - A(i,1:i-1)*x0(1:i-1) - A(i,i+1:n)*x0(i+1:n) ) / A(i,i);
  endfor
 
-##   r(it) = norm(x-xi,inf)/norm(xi,inf);
-##   xi = x;
-   r(it)=norm(b- A*x); # norm(x-x0)
+   r(it) = norm(x-xi,inf)/norm(xi,inf);
+   xi = x;
+##   r(it)=norm(b- A*x); # norm(x-x0)
 
 
  if r(it) < tol %then

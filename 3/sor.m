@@ -10,9 +10,9 @@ function [x, it, r]=sor(A, b, x0, maxit, tol,w)
  x(i) = (1-w)*x0(i)+ w * ( b(i) - A(i,1:i-1)*x(1:i-1) - A(i,i+1:n)*x0(i+1:n) ) / A(i,i);
  endfor
 
-##r(it) = norm(x-xi,inf)/norm(xi,inf);
-##xi = x;
- r(it) = norm(A*x - b); # norm(x-x0)
+r(it) = norm(x-xi,inf)/norm(xi,inf);
+xi = x;
+## r(it) = norm(A*x - b); # norm(x-x0)
  if r(it) < tol %then
  break;
  endif

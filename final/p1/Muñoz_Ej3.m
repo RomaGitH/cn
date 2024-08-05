@@ -11,7 +11,7 @@ xmax1 = 0;
 tol = 1e-8;
 kmax = 100;
 [x1,~] = biseccion(g,xmin1,xmax1,kmax,tol);
-[x1,~] = secante(g,x1,x1+tol,kmax,tol);
+##[x1,~] = secante(g,x1,x1+tol,kmax,tol);
 display(["x menor = ",num2str(x1)]);
 
 xmin2 = 0.5;
