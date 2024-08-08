@@ -1,3 +1,4 @@
+## A = LU
 function [x,Ar,L,U,P] = doolittle_p(A,b)
 
   n = length(A(:,1));
